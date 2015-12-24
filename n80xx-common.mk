@@ -63,6 +63,11 @@ PRODUCT_PACKAGES += \
     libhwjpeg \
     libsecril-client
 
+# RIL
+PRODUCT_PACKAGES += \
+    libsamsung_symbols \
+    ril-wrapper
+
 # shim libs for gpsd
 PRODUCT_PACKAGES += \
     libn80xx

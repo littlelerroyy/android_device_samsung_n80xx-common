@@ -60,6 +60,7 @@ PRODUCT_PACKAGES += \
 # Packages
 PRODUCT_PACKAGES += \
     camera.smdk4x12 \
+    Snap \
     libhwjpeg \
     libsecril-client
 

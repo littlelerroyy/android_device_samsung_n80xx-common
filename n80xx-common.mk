@@ -77,6 +77,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     consumerir.exynos4
 
+# f2fs
+PRODUCT_PACKAGES += \
+    fibmap.f2fs \
+    fsck.f2fs \
+    mkfs.f2fs
+
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.consumerir.xml:system/etc/permissions/android.hardware.consumerir.xml    
 

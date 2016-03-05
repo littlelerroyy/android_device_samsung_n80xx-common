@@ -54,6 +54,9 @@ endif
 -include vendor/samsung/n80xx-common/BoardConfigVendor.mk
 
 
+# PowerHAL
+TARGET_POWERHAL_VARIANT := pegasusq
+
 # Selinux
 BOARD_SEPOLICY_DIRS += \
     device/samsung/n80xx-common/selinux

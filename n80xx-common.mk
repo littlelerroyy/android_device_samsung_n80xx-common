@@ -26,9 +26,24 @@ TARGET_SCREEN_WIDTH := 1280
 PRODUCT_COPY_FILES += \
     device/samsung/n80xx-common/ueventd.smdk4x12.rc:root/ueventd.smdk4x12.rc \
     device/samsung/n80xx-common/ueventd.smdk4x12.rc:recovery/root/ueventd.smdk4x12.rc \
-    device/samsung/n80xx-common/fstab.smdk4x12:root/fstab.smdk4x12
+    device/samsung/n80xx-common/fstab.smdk4x12:root/fstab.smdk4x12 \
+    device/samsung/n80xx-common/twrp.fstab:recovery/root/etc/twrp.fstab
 
 # Recovery
+# TWRP specific build flags
+DEVICE_RESOLUTION := 1280x800
+TW_INTERNAL_STORAGE_PATH := "/data/media"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
+TW_EXTERNAL_STORAGE_PATH := "/external_sdcard"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sdcard"
+RECOVERY_SDCARD_ON_DATA := true
+BOARD_HAS_NO_REAL_SDCARD := true
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
+TW_NO_USB_STORAGE := true
+TWRP_EVENT_LOGGING := false
+TW_IGNORE_MAJOR_AXIS_0 := true
+TW_MAX_BRIGHTNESS := 255
+TW_BRIGHTNESS_PATH := /sys/class/backlight/panel/brightness
 TARGET_RECOVERY_FSTAB := device/samsung/n80xx-common/fstab.smdk4x12
 RECOVERY_FSTAB_VERSION := 2
 
@@ -84,8 +99,8 @@ PRODUCT_PACKAGES += \
     mkfs.f2fs
 
 # Power
-PRODUCT_PACKAGES += \
-    power.smdk4x12
+# PRODUCT_PACKAGES += \
+#    power.smdk4x12
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.consumerir.xml:system/etc/permissions/android.hardware.consumerir.xml    

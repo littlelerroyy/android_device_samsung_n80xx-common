@@ -34,10 +34,10 @@ We are able to have most of our routing static so do that
     <!-- DAC1->SPKL/R->SPKL/R Boost->SPK -->
     <ctl name="SPKL DAC1 Switch" val="1"/>
     <ctl name="SPKR DAC1 Switch" val="1"/>
-    <ctl name="SPKL Boost SPKL Switch" val="1"/>
-    <ctl name="SPKL Boost SPKR Switch" val="0"/>
-    <ctl name="SPKR Boost SPKL Switch" val="0"/>
-    <ctl name="SPKR Boost SPKR Switch" val="1"/>
+    <ctl name="SPKL Boost SPKL Switch" val="0"/>
+    <ctl name="SPKL Boost SPKR Switch" val="1"/>
+    <ctl name="SPKR Boost SPKL Switch" val="1"/>
+    <ctl name="SPKR Boost SPKR Switch" val="0"/>
     <ctl name="Speaker Mixer Volume" val="3"/>
     <ctl name="Speaker Boost Volume" val="5"/>  <!--Increase speaker volume, 7 is the max, 5 default-->
     

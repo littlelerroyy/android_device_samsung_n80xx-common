@@ -23,6 +23,8 @@ TARGET_SPECIFIC_HEADER_PATH := device/samsung/n80xx-common/include
 # Exynos4x12 Tablet
 BOARD_GLOBAL_CFLAGS += -DEXYNOS4X12_TABLET
 
+TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
+
 # Camera
 BOARD_USES_PROPRIETARY_LIBCAMERA := true
 
@@ -42,24 +44,18 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 12620578816
 BOARD_CACHEIMAGE_PARTITION_SIZE := 825638912
 BOARD_FLASH_BLOCK_SIZE := 2048
 TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USERIMAGES_USE_F2FS := true
 TARGET_RECOVERY_DEVICE_DIRS += device/samsung/n80xx
-
-# Enable dex-preoptimization to speed up first boot sequence
-ifeq ($(HOST_OS),linux)
-  WITH_DEXPREOPT := true
-endif
 
 # Recovery
 # inherit from the proprietary version
 -include vendor/samsung/n80xx-common/BoardConfigVendor.mk
 
 
+# SELinux
+BOARD_SEPOLICY_DIRS += device/samsung/n80xx-common/selinux
+
 # PowerHAL
 TARGET_POWERHAL_VARIANT := pegasusq
 
-# Selinux
-BOARD_SEPOLICY_DIRS += \
-    device/samsung/n80xx-common/selinux
 
 
